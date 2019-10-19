@@ -5,16 +5,24 @@ class GetApi extends Component{
 
     state = {
         loading: true,
-        weather: null
+        weather: null,
+        temp: null
     }
 
     async componentDidMount(){
-        const proxyurl = "https://crossorigin.me/";
-        const url = proxyurl + "http://api.randomuser.me";
+        const proxy = `https://cors-anywhere.herokuapp.com/`
+        const access_key = null ;
+        const url = proxy + `http://api.weatherstack.com/current?access_key=${access_key}&query=Toronto`;
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(position => {
+                let long = position.coords.longitude;
+                let lat = position.coords.latitude;
+                const url = proxy + `http://api.weatherstack.com/current?access_key=${access_key}&query=${lat},${long}`;
+            });
+        }
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
-        this.setState({weather: data.results[0], loading: false});
+        this.setState({weather: data, temp: data.current.temperature, loading: false});
     }
 
     render(){
@@ -23,10 +31,15 @@ class GetApi extends Component{
                 LOADING.....
             </div>)
         }
+        if(!this.state.weather){
+            return (
+                <div>ERROR!</div>
+            )
+        }
         return (
             <div>
-                <h1>Person is: </h1>
-                <h1>{this.state.name.first}</h1>
+                <h1>Temperature is: </h1>
+                <div>{this.state.temp} C</div>
             </div>
         );
     }
