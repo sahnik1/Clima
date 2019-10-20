@@ -11,7 +11,7 @@ class GetApi extends Component{
 
     async componentDidMount(){
         const proxy = `https://cors-anywhere.herokuapp.com/`
-        const access_key = null ;
+        const access_key = Null;
         const url = proxy + `http://api.weatherstack.com/current?access_key=${access_key}&query=Toronto`;
         if (navigator.geolocation){
             navigator.geolocation.getCurrentPosition(position => {
@@ -28,12 +28,12 @@ class GetApi extends Component{
     render(){
         if(this.state.loading){
             return (<div>
-                LOADING.....
+                LOADING...
             </div>)
         }
         if(!this.state.weather){
             return (
-                <div>ERROR!</div>
+                <div>An Unknown Error Occured!</div>
             )
         }
         return (
