@@ -11,7 +11,7 @@ class GetApi extends Component{
 
     async componentDidMount(){
         const proxy = `https://cors-anywhere.herokuapp.com/`
-        const access_key = Null;
+        const access_key = null;
         const url = proxy + `http://api.weatherstack.com/current?access_key=${access_key}&query=Toronto`;
         if (navigator.geolocation){
             navigator.geolocation.getCurrentPosition(position => {

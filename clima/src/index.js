@@ -4,16 +4,29 @@ import './index.css';
 import GetApi from './Views/HomeView.js'
 import MainView from './Views/MainView.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
 import $ from 'jquery';
 import Popper from 'popper.js';
 import * as serviceWorker from './serviceWorker';
 
 class Index extends Component{
     
+    handleClick(){
+        render(
+            <div>
+                <GetApi />
+            </div>,
+            document.getElementById('root')
+        );
+    }
+
     render(){
         return(
         <div>
-             <MainView />
+            <MainView />
+            <Button variant="primary" size="lg" active onClick={this.handleClick}>
+                Primary button
+            </Button>
         </div>
         )
     }
