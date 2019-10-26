@@ -10,16 +10,16 @@ class GetApi extends Component{
     }
 
     async componentDidMount(){
-        const proxy = `https://cors-anywhere.herokuapp.com/`
-        const access_key = null;
-        const url = proxy + `http://api.weatherstack.com/current?access_key=${access_key}&query=Toronto`;
-        if (navigator.geolocation){
+        const proxy = `https://cors-anywhere.herokuapp.com/`;
+        const access_key = ``;
+        const url = proxy + `http://api.weatherstack.com/current?access_key=${access_key}&query=fetch:ip`;
+        /* if (navigator.geolocation){
             navigator.geolocation.getCurrentPosition(position => {
                 let long = position.coords.longitude;
                 let lat = position.coords.latitude;
                 const url = proxy + `http://api.weatherstack.com/current?access_key=${access_key}&query=${lat},${long}`;
             });
-        }
+        } */
         const response = await fetch(url);
         const data = await response.json();
         this.setState({weather: data, temp: data.current.temperature, loading: false});

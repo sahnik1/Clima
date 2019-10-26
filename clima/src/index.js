@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import './index.css';
+import './style.css';
 import GetApi from './Views/HomeView.js'
 import MainView from './Views/MainView.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,7 +10,7 @@ import Popper from 'popper.js';
 import * as serviceWorker from './serviceWorker';
 
 class Index extends Component{
-    
+
     handleClick(){
         render(
             <div>
@@ -22,7 +22,7 @@ class Index extends Component{
 
     render(){
         return(
-        <div>
+        <div className='body'>
             <MainView />
             <Button variant="primary" size="lg" active onClick={this.handleClick}>
                 Primary button

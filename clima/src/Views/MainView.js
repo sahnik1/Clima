@@ -7,9 +7,12 @@ class MainView extends Component{
 
     render(){
         return(
+        <div>
             <div>
                MAIN PAGE
             </div>
+            <span class="align-middle"></span>
+        </div>
         )
     }
 };
