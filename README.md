@@ -16,11 +16,10 @@ Coming Soon…
 # Installation
 ### Requirements:
 * React Js
-	** Dependencies:
-		*** ReactLoading
-		*** Material UI
+	* Dependencies:
+		* ReactLoading
+		* Material UI
 * Node.JS
-* 
 
 ### Instructions:
 * Ensure all Files are in the same directory & all dependencies are installed.
