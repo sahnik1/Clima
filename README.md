@@ -27,6 +27,3 @@ Coming Soon…
 * From Terminal/Powershell run ```npm start``` to start dev server.
 * Done!
 
-## Note
-* The API is Flexible for Incomplete Makes or Models and therefore in the above example works for the make 'toyo'
-
